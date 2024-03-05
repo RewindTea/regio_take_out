@@ -2,6 +2,7 @@ package com.hyt.regio.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING)//把Id转成String类型，解决web传到服务器精度丢失问题
     private Long id;
 
     private String username;
